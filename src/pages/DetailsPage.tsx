@@ -93,5 +93,5 @@ export function DetailsPage({posts, setPosts}: DetailsPageProps) {
 
 // Function to generate unique IDs
 function generateUniqueId() {
-    return Date.now(); // Using timestamp as a simple way to generate unique IDs
+    return Date.now();
 }

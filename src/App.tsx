@@ -20,8 +20,7 @@ function App() {
     }, []);
 
     const fetchPosts = () => {
-        setLoading(true); // Set loading state to true while fetching
-        // Simulate a delay of 1 second (1000 milliseconds) before resolving the promise
+        setLoading(true);
         setTimeout(() => {
             ApiCalls.getAllPosts()
                 .then(response => {
@@ -37,14 +36,9 @@ function App() {
         <div className="App">
             <Router>
                 <Routes>
-                    {/* Render loading indicator while loading */}
-
-                    <>
-                        <Route path="/" element={<HomePage posts={posts}/>}/>
-                        <Route path="/create" element={<CreatePage setPosts={setPosts}/>}/>
-                        <Route path="/details/:id" element={<DetailsPage posts={posts} setPosts={setPosts}/>}/>
-                    </>
-
+                    <Route path="/" element={<HomePage posts={posts}/>}/>
+                    <Route path="/create" element={<CreatePage setPosts={setPosts}/>}/>
+                    <Route path="/details/:id" element={<DetailsPage posts={posts} setPosts={setPosts}/>}/>
                 </Routes>
             </Router>
         </div>
